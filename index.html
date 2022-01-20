@@ -34,7 +34,7 @@
     </div>
 
     <div id="white" class="score">
-        <button class="ubtn" id="wiubtn" onclick="cntUpIppon('wii')">↑</button>
+        <button class="ubtn" id="wiubtn" onclick="cntUp('wii')">↑</button>
         <div class="indicator" id="wi">
             <p>IPPON</p>
             <h1 id="wii">0</h1>
@@ -58,10 +58,10 @@
 
     <div id="blue" class="score">
 
-        <button class="ubtn" id="biubtn" onclick="cntUpIppon('linus')">↑</button>
+        <button class="ubtn" id="biubtn" onclick="cntUp('bii')">↑</button>
         <div class="indicator" id="bi">
             <p>IPPON</p>
-            <h1 id="linus">0</h1>
+            <h1 id="bii">0</h1>
         </div>
         <button class="dbtn" id="bidbtn" onclick="cntDown('bii')">↓</button>   
 
@@ -86,11 +86,6 @@
 
     <button id="reset">RESET</button>
 
-    <div id="whitewin" class="winner">
-        <button class="ext" id="extx" onclick="hide()">x</button>
-    </div>
-
-    <div id="bluewin" class="winner"></div>
     <script src='script.js'></script>
 </body>
 </html>

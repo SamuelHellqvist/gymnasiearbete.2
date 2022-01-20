@@ -229,21 +229,6 @@ input{
     padding: 5px;
 }
 
-#whitewin{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    width: 75%;
-    height: 90%;
-    background-color: white;
-    opacity: 0%;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 8rem;
-    text-align: center;
-    align-items: center;
-}
 .ext{
     position: absolute;
     right: 0%;
@@ -257,6 +242,6 @@ input{
 #biubtn{
     grid-column: 1;
     grid-row: 1;
-    background-color: lime;
+    background-color: (--buttongray);
 
 }
