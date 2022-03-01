@@ -10,11 +10,10 @@
 <body>
     
     <div id="matchtime"><input type="text" placeholder="Match 1"></div>
-
-    <div id="matchclock">
-        <div id="time"><h1>02 : 00</h1></div>
-        <button id="play">START / STOP</button>
+    
+    <div class="timer">
     </div>
+    
 
     <div class="contestor" id="whitecontestor"><input type="text" placeholder="Contestor 1"></div>
     <div class="contestor" id="bluecontestor"><input type="text" placeholder="Contestor 2"></div>
@@ -34,7 +33,7 @@
     </div>
 
     <div id="white" class="score">
-        <button class="ubtn" id="wiubtn" onclick="cntUp('wii')">↑</button>
+        <button class="ubtn" id="wiubtn" onclick="cntUpIppon('wii')">↑</button>
         <div class="indicator" id="wi">
             <p>IPPON</p>
             <h1 id="wii">0</h1>
@@ -48,7 +47,7 @@
         </div>
         <button class="dbtn" id="wwdbtn" onclick="cntDown('wwi')">↓</button>
 
-        <button class="ubtn" id="wsubtn" onclick="cntUp('wsi')">↑</button>
+        <button class="ubtn" id="wsubtn" onclick="cntUpShido('wsi')">↑</button>
         <div class="indicator" id="ws">
             <p>SHIDO</p>
             <h1 id="wsi">0</h1>    
@@ -58,7 +57,7 @@
 
     <div id="blue" class="score">
 
-        <button class="ubtn" id="biubtn" onclick="cntUp('bii')">↑</button>
+        <button class="ubtn" id="biubtn" onclick="cntUpIppon('bii')">↑</button>
         <div class="indicator" id="bi">
             <p>IPPON</p>
             <h1 id="bii">0</h1>
@@ -75,7 +74,7 @@
 
 
         
-        <button class="ubtn" id="bsubtn" onclick="cntUp('bsi')">↑</button>
+        <button class="ubtn" id="bsubtn" onclick="cntUpShido('bsi')">↑</button>
         <div class="indicator" id="bs">
             <p>SHIDO</p>
             <h1 id="bsi">0</h1>
@@ -85,6 +84,8 @@
     </div>
 
     <button id="reset">RESET</button>
+    <button class="winbtn" id="whitewinbtn">confirmed winner</button>    
+    <button class="winbtn" id="bluewinbtn">confirmed winner</button>        
 
     <script src='script.js'></script>
 </body>
