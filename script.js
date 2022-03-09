@@ -1,5 +1,5 @@
-//uppfunktion
-function cntUp(getID){
+//uppfunktion till wasaari (den som har flest wasarri (poäng) i slutet av matchen vinner)
+function cntUpWasaari(getID){
     temp=document.getElementById(getID);
     console.log(temp);
     cnt=parseInt(temp.innerHTML);
@@ -27,7 +27,7 @@ function cntDown(getID){
     }
 }
 
-//uppfunktion till ippon
+//uppfunktion till ippon (får en en ippon vinner man)
 function cntUpIppon(getID){
     temp=document.getElementById(getID);
     console.log(temp);
@@ -40,6 +40,10 @@ function cntUpIppon(getID){
     if (cnt == 2){
         cnt--;
         temp.innerHTML=cnt;
+    }
+    if (cnt == 1){
+        console.log("Winner chosen");
+
     }
 }
 
@@ -55,4 +59,18 @@ function cntUpShido(getID){
         cnt--;
         temp.innerHTML=cnt;
     }
+    if (cnt == 3){
+        console.log("Winner chosen")
+    }
+}
+
+//function för att resetta allt
+function resetter(){
+    console.log("resetting scores")
+    document.getElementById('wii').innerHTML="0";
+    document.getElementById('bii').innerHTML="0";
+    document.getElementById('wwi').innerHTML="0";
+    document.getElementById('bwi').innerHTML="0";
+    document.getElementById('wsi').innerHTML="0";
+    document.getElementById('bsi').innerHTML="0";
 }

@@ -15,8 +15,13 @@
     </div>
     
 
-    <div class="contestor" id="whitecontestor"><input type="text" placeholder="Contestor 1"></div>
-    <div class="contestor" id="bluecontestor"><input type="text" placeholder="Contestor 2"></div>
+    <div class="contestor" id="whitecontestor">
+        <input type="text" placeholder="Contestor 1" id="c1">
+    </div>
+
+    <div class="contestor" id="bluecontestor">
+        <input type="text" placeholder="Contestor 2" id="c2">
+    </div>
 
     <div id="osaekomi">
         <div id="txt"><h1>OSAEKOMI</h1></div>
@@ -40,7 +45,7 @@
         </div>
         <button class="dbtn" id="widbtn" onclick="cntDown('wii')">↓</button>
 
-        <button class="ubtn" id="wwubtn" onclick="cntUp('wwi')">↑</button>
+        <button class="ubtn" id="wwubtn" onclick="cntUpWasaari('wwi')">↑</button>
         <div class="indicator" id="ww">
             <p>WASAARI</p>
             <h1 id="wwi">0</h1>
@@ -65,7 +70,7 @@
         <button class="dbtn" id="bidbtn" onclick="cntDown('bii')">↓</button>   
 
         
-        <button class="ubtn" id="bwubtn" onclick="cntUp('bwi')">↑</button>
+        <button class="ubtn" id="bwubtn" onclick="cntUpWasaari('bwi')">↑</button>
         <div class="indicator" id="bw">
             <p>WASAARI</p>
             <h1 id="bwi">0</h1>
@@ -83,7 +88,7 @@
 
     </div>
 
-    <button id="reset">RESET</button>
+    <button id="reset" onclick="resetter('bwi')">all zero</button>
     <button class="winbtn" id="whitewinbtn">confirmed winner</button>    
     <button class="winbtn" id="bluewinbtn">confirmed winner</button>        
 

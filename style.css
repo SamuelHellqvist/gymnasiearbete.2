@@ -7,6 +7,7 @@
     --redaccent: #EB4713;
     --blueaccent: #1236DE;
     --buttongray: #5A5C6E;
+    --greenaccent: #bad455;
 }
 body{
     background-color: var(--primarydark);
@@ -198,19 +199,9 @@ input{
     background-color: var(--orangeaccent);
     color: black;
     font-family: sans-serif;
-    right: 5px;
+    left: 5px;
     top: 5px;
     padding: 5px;
-}
-
-.ext{
-    position: absolute;
-    right: 0%;
-    top: 0%;
-    background-color: var(--redaccent);
-    color: white;
-    height: 5%;
-    width: 3%;
 }
 
 #biubtn{
@@ -221,13 +212,13 @@ input{
 }
 
 .winbtn{
-    grid-row: 1;
+    grid-row: 2;
 }
 #whitewinbtn{
+    opacity: 0;
     grid-column: 1;
     background-color: white;
     color: black;
-    opacity: 0;
 }
 #bluewinbtn{
     opacity: 0;
