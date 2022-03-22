@@ -74,3 +74,19 @@ function resetter(){
     document.getElementById('wsi').innerHTML="0";
     document.getElementById('bsi').innerHTML="0";
 }
+
+var ot = 50;
+
+function oseakomi(points){
+    ot = points;
+    var progress = document.querySelector(".progress-bar-fill");
+    progress.style.width = points + "%";
+    
+}
+
+function whitefunc(){
+    setTimeout(() =>{
+        oseakomi(50)
+    }, 1000);
+}
+/*oseakomi(40);*/
