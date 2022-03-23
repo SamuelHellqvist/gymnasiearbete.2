@@ -25,15 +25,16 @@
 
     <div id="osaekomi">
         <div id="txt"><h1>OSAEKOMI</h1></div>
-        <button class="obtn" id="wobtn" onclick="whitefunc()">WHITE</button>
-        <button class="obtn" id="sobtn" onclick="oseakomi()">Start</button>
-        <button class="obtn" id="bobtn">BLUE</button>
+        <button class="obtn" id="wobtn" onclick="whiteoseakomifnc()">WHITE</button>
+        <button class="obtn" id="sobtn" onclick="osaekomireset()">Start</button>
+        <button class="obtn" id="bobtn" onclick="blueoseakomifnc()">BLUE</button>
     </div>
 
     <div id="osaekomiclock">
         <div class="progress-bar">
-            <div class="progress-bar-value">100%</div>
-            <div class="progress-bar-fill"></div>
+            <div class="progress-bar-value"></div>
+            <div class="progress-bar-fill" id="white-progress-bar"></div>
+            <div class="progress-bar-fill" id="blue-progress-bar"></div>
         </div>
     </div>
 

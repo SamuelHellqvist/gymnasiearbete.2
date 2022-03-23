@@ -66,7 +66,7 @@ function cntUpShido(getID){
 
 //function för att resetta allt
 function resetter(){
-    console.log("resetting scores")
+    console.log("resetting scores, true");
     document.getElementById('wii').innerHTML="0";
     document.getElementById('bii').innerHTML="0";
     document.getElementById('wwi').innerHTML="0";
@@ -75,18 +75,65 @@ function resetter(){
     document.getElementById('bsi').innerHTML="0";
 }
 
-var ot = 50;
+var ot = 0;
 
-function oseakomi(points){
-    ot = points;
-    var progress = document.querySelector(".progress-bar-fill");
+function blueoseakomifnc(points){
+    var progress = document.querySelector("#blue-progress-bar");
+
+    // var background = document.querySelector(".progress-bar-value")
+    // background.style.backgroundColor = "var(--blueaccent)";
+
+    var bluefiller = document.querySelector("#blue-progress-bar")
+    bluefiller.style.opacity = "100%"
+
+    var whitefiller = document.querySelector("#white-progress-bar")
+    whitefiller.style.opacity = "0%"
+    
+    console.log("starting osaekomi now, blue");
+    points = ot;
+
     progress.style.width = points + "%";
+    
+    setTimeout( ()=>{
+        ot++;
+        blueoseakomifnc(points);
+    }, 200);
+    if (ot == 100){
+        console.log("Somebody scored!");
+        ot--;
+        cntUpIppon('bii');
+    }
+}
+
+function whiteoseakomifnc(points){
+    var progress = document.querySelector("#white-progress-bar");
+    
+    // var background = document.querySelector(".progress-bar-value")
+    // background.style.backgroundColor = "white";
+
+    var bluefiller = document.querySelector("#blue-progress-bar")
+    bluefiller.style.opacity = "0%";
+
+    progress.style.opacity = "100%";
+
+    console.log("starting osaekomi now, white");
+    
+    points = ot;
+
+    progress.style.width = points + "%";
+    
+    setTimeout( ()=>{
+        ot++;
+        whiteoseakomifnc(points);
+    }, 200);
+    if (ot == 100){
+        console.log("Somebody scored!");
+        ot--;
+        cntUpIppon('wii');
+    }
     
 }
 
-function whitefunc(){
-    setTimeout(() =>{
-        oseakomi(50)
-    }, 1000);
+function osaekomireset(){
+    console.log("Osaekomi is resetted");
 }
-/*oseakomi(40);*/

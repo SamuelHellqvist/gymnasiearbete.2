@@ -2,6 +2,7 @@
     padding: 0;
     margin: 1px;
     box-sizing: border-box;
+    --whiteaccent: white;
     --primarydark: #171820;
     --orangeaccent: #df861d;
     --redaccent: #EB4713;
@@ -82,12 +83,26 @@ body{
     position: relative;
     grid-column: 1;
     grid-row: 1;
+    background-color: var(--buttongray);
 }
 .progress-bar-fill{
+    position: absolute;
     height: 100%;
-    background-color: lightgreen;
     transition: width 0.5s;
-    width: 100%;
+    width: 0%;
+    background-color: var(--buttongray);
+}
+
+#white-progress-bar{
+    background-color: white;
+    width: 0%;
+    opacity: 0;
+}
+
+#blue-progress-bar{
+    background-color: var(--blueaccent);
+    width: 0%;
+    opacity: 100;
 }
 .progress-bar-value{
     position: absolute;
