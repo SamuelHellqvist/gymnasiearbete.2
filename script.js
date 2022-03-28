@@ -75,18 +75,76 @@ function resetter(){
     document.getElementById('bsi').innerHTML="0";
 }
 
+//variabel som sätts till 0 som senare kommer att användas i en funktion som behöver ett växande värde
 var ot = 0;
 
+//variabel som sätts till 1. kommer senare användas för att veta när det går att använda
+//funktionerna för oseakomi/fasthållning
+var crash = 1;
+
+//function för att stoppa osaekomi funktionerna
+function stop_o(){
+    crash--;
+    console.log("cancelling oaseakomi");
+    console.log(crash);
+}
+
+//function för att resetta oseakomi funktionerna så att man kan använda dem igen
+function reset_o(){
+    console.log("crash");
+    crash++;
+    console.log(crash);
+}
+
+
+//function som används när tävlande i vit dräkt håller en fasthållning
+function whiteoseakomifnc(points){ 
+    var progress = document.querySelector("#white-progress-bar");
+
+    progress.style.opacity = "100%";
+
+    var bluefiller = document.querySelector("#blue-progress-bar");
+    bluefiller.style.opacity = "0%"
+    
+    console.log("starting osaekomi now, white");
+    points = ot;
+    crash = crash;
+
+    progress.style.width = points + "%";
+    
+    if (crash == 1){
+        setTimeout( ()=>{
+            ot++;
+            whiteoseakomifnc(points);
+        }, 200);
+
+        if (ot == 50){
+            console.log("Somebody got a wasaari")
+            cntUpWasaari('wwi')
+        }
+
+        if (ot == 100){
+            ot--;
+            cntDown('wwi');
+            console.log("Somebody won");
+            cntUpIppon('wii');
+        }
+    }
+    if (crash == 0){
+        progress.style.width = 0 + "%";
+        console.log("resetting slider")
+        ot = 0;
+        console.log(ot)
+        }
+}
+
+//function som används när tävlande i blå dräkt håller en fasthållning
 function blueoseakomifnc(points){
     var progress = document.querySelector("#blue-progress-bar");
 
-    // var background = document.querySelector(".progress-bar-value")
-    // background.style.backgroundColor = "var(--blueaccent)";
+    progress.style.opacity = "100%";
 
-    var bluefiller = document.querySelector("#blue-progress-bar")
-    bluefiller.style.opacity = "100%"
-
-    var whitefiller = document.querySelector("#white-progress-bar")
+    var whitefiller = document.querySelector("#white-progress-bar");
     whitefiller.style.opacity = "0%"
     
     console.log("starting osaekomi now, blue");
@@ -94,46 +152,32 @@ function blueoseakomifnc(points){
 
     progress.style.width = points + "%";
     
-    setTimeout( ()=>{
-        ot++;
-        blueoseakomifnc(points);
-    }, 200);
-    if (ot == 100){
-        console.log("Somebody scored!");
-        ot--;
-        cntUpIppon('bii');
+    if (crash == 1){
+        setTimeout( ()=>{
+            ot++;
+            blueoseakomifnc(points);
+        }, 200);
+
+        if (ot == 50){
+            console.log("Somebody got a wasaari");
+            cntUpWasaari('bwi');
+        }
+
+        if (ot == 100){
+            ot--;
+            console.log("Somebody won!");
+            cntDown('bwi')
+            cntUpIppon('bii');
+        }
     }
+    if (crash == 0){
+        progress.style.width = 0 + "%";
+        console.log("resetting slider");
+        ot = 0;
+        console.log(ot);
+        }
 }
 
-function whiteoseakomifnc(points){
-    var progress = document.querySelector("#white-progress-bar");
-    
-    // var background = document.querySelector(".progress-bar-value")
-    // background.style.backgroundColor = "white";
-
-    var bluefiller = document.querySelector("#blue-progress-bar")
-    bluefiller.style.opacity = "0%";
-
-    progress.style.opacity = "100%";
-
-    console.log("starting osaekomi now, white");
-    
-    points = ot;
-
-    progress.style.width = points + "%";
-    
-    setTimeout( ()=>{
-        ot++;
-        whiteoseakomifnc(points);
-    }, 200);
-    if (ot == 100){
-        console.log("Somebody scored!");
-        ot--;
-        cntUpIppon('wii');
-    }
-    
-}
-
-function osaekomireset(){
-    console.log("Osaekomi is resetted");
+function clock(){
+    console.log("test")
 }

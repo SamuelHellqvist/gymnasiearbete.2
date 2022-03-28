@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <div id="matchtime"><input type="text" placeholder="Match 1"></div>
     
     <div class="timer">
+        <h1 id="mainclock">200</h1>
+        <button id="clockbtn" onclick="clock()"></button>
     </div>
     
 
@@ -26,7 +27,9 @@
     <div id="osaekomi">
         <div id="txt"><h1>OSAEKOMI</h1></div>
         <button class="obtn" id="wobtn" onclick="whiteoseakomifnc()">WHITE</button>
-        <button class="obtn" id="sobtn" onclick="osaekomireset()">Start</button>
+        <button class="obtn" id="sobtn" onclick="stop_o()">Stop</button>
+        <button class="obtn" id="robtn" onclick="reset_o()">Reset</button>
+        <!--<button class="obtn" id="robtn">Reset</button>-->
         <button class="obtn" id="bobtn" onclick="blueoseakomifnc()">BLUE</button>
     </div>
 
