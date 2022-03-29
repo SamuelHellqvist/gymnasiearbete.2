@@ -11,8 +11,17 @@
     <div id="matchtime"><input type="text" placeholder="Match 1"></div>
     
     <div class="timer">
-        <h1 id="mainclock">200</h1>
-        <button id="clockbtn" onclick="clock()"></button>
+        <h1 class="clocktext" id="mainclockminute">4</h1>
+        <h1 class="clocktext" id="colon">:</h1>
+        <h1 class="clocktext" id="mainclockseconds">00</h1>
+
+        <!-- <h2 class="timetype" id="timetypemin">min</h2> -->
+        <!-- <h2 class="timetype" id="timetypesec">sec</h2> -->
+
+        <button class="cbtn" id="clockstopbtn" onclick="stopclock()">Stop</button>
+        <button class="cbtn" id="clockbtn" onclick="clock()">Start</button>
+        <button class="cbtn" id="clockresetbtn" onclick="resetclock()">Reset</button>
+        <button class="cbtn" id="newclockbtn" onclick="restart()">Restart</button>
     </div>
     
 
@@ -27,7 +36,7 @@
     <div id="osaekomi">
         <div id="txt"><h1>OSAEKOMI</h1></div>
         <button class="obtn" id="wobtn" onclick="whiteoseakomifnc()">WHITE</button>
-        <button class="obtn" id="sobtn" onclick="stop_o()">Stop</button>
+        <button class="obtn" id="sobtn" onclick="stop_o()">Toketa</button>
         <button class="obtn" id="robtn" onclick="reset_o()">Reset</button>
         <!--<button class="obtn" id="robtn">Reset</button>-->
         <button class="obtn" id="bobtn" onclick="blueoseakomifnc()">BLUE</button>

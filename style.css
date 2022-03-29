@@ -202,6 +202,15 @@ body{
 .obtn{
     background-color: var(--buttongray);
 }
+
+#robtn{
+    opacity: 0%;
+    position: absolute;
+}
+
+#sobtn{
+    grid-column: 2/4;
+}
 button{
     color: white;
 }
@@ -287,4 +296,48 @@ input{
 
 span{
   font-size: 8rem;
+}
+
+.cbtn{
+    background-color: var(--buttongray);
+    grid-row: 4;
+}
+
+.timer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.clocktext{
+    grid-row: 1/2;
+    font-size: 8rem;
+    padding: 0%;
+    margin: 0;
+}
+
+.timetype{
+    font-size: 1rem;
+}
+
+#newclockbtn{
+    position: absolute;
+    opacity: 0;
+}
+
+#timetypesec{
+    grid-column: 3;
+}
+
+#clockresetbtn{
+    opacity: 0%;
+    grid-column: 2;
+}
+
+#clockstopbtn{
+    grid-column: 3;
+}
+
+#clockbtn{
+    grid-column: 1;
 }

@@ -73,6 +73,8 @@ function resetter(){
     document.getElementById('bwi').innerHTML="0";
     document.getElementById('wsi').innerHTML="0";
     document.getElementById('bsi').innerHTML="0";
+    resetclock();
+    reset_o();
 }
 
 //variabel som sätts till 0 som senare kommer att användas i en funktion som behöver ett växande värde
@@ -87,6 +89,21 @@ function stop_o(){
     crash--;
     console.log("cancelling oaseakomi");
     console.log(crash);
+
+    var resetthis = document.querySelector('#robtn');
+    resetthis.style.opacity = "100%";
+    resetthis.style.position = "relative";
+    resetthis.style.gridColumn = "2/4";
+
+    var toketa = document.querySelector('#sobtn');
+    toketa.style.position = "absolute";
+    toketa.style.opacity = "0%";
+
+    var blue = document.querySelector('#bobtn');
+    blue.style.opacity = "0%";
+
+    var white = document.querySelector('#wobtn');
+    white.style.opacity = "0%";
 }
 
 //function för att resetta oseakomi funktionerna så att man kan använda dem igen
@@ -94,6 +111,24 @@ function reset_o(){
     console.log("crash");
     crash++;
     console.log(crash);
+
+    var resetthis = document.querySelector('#robtn');
+    resetthis.style.opacity = "0%";
+    resetthis.style.position = "absolute";
+
+    var toketa = document.querySelector("#sobtn");
+    toketa.style.opacity = "100%";
+    toketa.style.position = "relative";
+    toketa.style.gridColumn = "2/4";
+    
+
+    var blue = document.querySelector('#bobtn');
+    blue.style.opacity = "100%";
+
+    var white = document.querySelector('#wobtn');
+    white.style.opacity = "100%";
+
+
 }
 
 
@@ -125,7 +160,7 @@ function whiteoseakomifnc(points){
 
         if (ot == 100){
             ot--;
-            cntDown('wwi');
+            // cntDown('wwi');
             console.log("Somebody won");
             cntUpIppon('wii');
         }
@@ -140,6 +175,7 @@ function whiteoseakomifnc(points){
 
 //function som används när tävlande i blå dräkt håller en fasthållning
 function blueoseakomifnc(points){
+
     var progress = document.querySelector("#blue-progress-bar");
 
     progress.style.opacity = "100%";
@@ -147,7 +183,7 @@ function blueoseakomifnc(points){
     var whitefiller = document.querySelector("#white-progress-bar");
     whitefiller.style.opacity = "0%"
     
-    console.log("starting osaekomi now, blue");
+    console.log("starting osaekomi now, blue, yes");
     points = ot;
 
     progress.style.width = points + "%";
@@ -166,7 +202,7 @@ function blueoseakomifnc(points){
         if (ot == 100){
             ot--;
             console.log("Somebody won!");
-            cntDown('bwi')
+            // cntDown('bwi')
             cntUpIppon('bii');
         }
     }
@@ -179,5 +215,106 @@ function blueoseakomifnc(points){
 }
 
 function clock(){
-    console.log("test")
+    if(yn == 1){
+        sec = document.getElementById('mainclockseconds');
+        min = document.getElementById('mainclockminute');
+
+        ant = parseInt(min.innerHTML);
+        bnt = parseInt(sec.innerHTML);
+
+        setTimeout( ()=>{
+            bnt--;
+            sec.innerHTML=bnt;
+            clock('mainclocksecond')
+        }, 1000);
+
+        if(bnt == 0){
+            bnt = 59;
+            sec.innerHTML = bnt;
+            ant--;
+            min.innerHTML = ant;
+        }
+
+        if(ant < 0){
+            ant = 0;
+            min.innerHTML = ant;
+        }
+    }
 }
+
+var yn = 1;
+
+function stopclock(){
+    yn--;
+    console.log(yn)
+
+    var newstart = document.querySelector('#newclockbtn');
+    newstart.style.position = "relative";
+    newstart.style.gridColumn = "1";
+    newstart.style.opacity = "100%";
+
+    var oldstart = document.querySelector("#clockbtn");
+    oldstart.style.position = "absolute"
+    oldstart.style.opacity = "0";
+
+    var reset = document.querySelector('#clockresetbtn');
+    reset.style.opacity = "100%";
+    reset.style.gridColumn = "3"
+
+    var stop = document.querySelector('#clockstopbtn');
+    stop.style.opacity = "0%";
+    stop.style.gridColumn = "2";
+}
+
+function resetclock(){
+    console.log("test")
+    yn = 1;
+    console.log(yn)
+    sec = document.getElementById('mainclockseconds');
+    min = document.getElementById('mainclockminute');
+    ant = parseInt(min.innerHTML);
+    bnt = parseInt(sec.innerHTML);
+
+    ant = 4;
+    bnt = 0;
+
+    min.innerHTML = ant;
+    sec.innerHTML = bnt;
+
+    var oldstart = document.querySelector('#clockbtn');
+    oldstart.style.position = "relative";
+    oldstart.style.gridColumn = "1";
+    oldstart.style.opacity = "100";
+
+    var newstart = document.querySelector('#newclockbtn');
+    newstart.style.position = "absolute";
+    newstart.style.opacity = "0%";
+    console.log("hello world!")
+
+    var reset = document.querySelector('#clockresetbtn');
+    reset.style.opacity = "0%";
+    reset.style.gridColumn = "2";
+
+    var stop = document.querySelector('#clockstopbtn')
+    stop.style.opacity = "100%";
+    stop.style.gridColumn = "3"
+}
+
+function restart(){
+    yn++;
+    console.log(yn);
+    clock();
+    console.log("hello world!");
+    var reset = document.querySelector('#clockresetbtn');
+    reset.style.opacity = "0%";
+    reset.style.gridColumn = "2";
+    var stop = document.querySelector('#clockstopbtn');
+    stop.style.opacity = "100%";
+    stop.style.gridColumn = "3"
+}
+
+function greet(){
+    console.log("Hello world!")
+}
+
+greet()
