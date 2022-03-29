@@ -183,7 +183,7 @@ function blueoseakomifnc(points){
     var whitefiller = document.querySelector("#white-progress-bar");
     whitefiller.style.opacity = "0%"
     
-    console.log("starting osaekomi now, blue, yes");
+    console.log("starting osaekomi now, blue");
     points = ot;
 
     progress.style.width = points + "%";
@@ -214,6 +214,7 @@ function blueoseakomifnc(points){
         }
 }
 
+// function för att starta klockan
 function clock(){
     if(yn == 1){
         sec = document.getElementById('mainclockseconds');
@@ -242,8 +243,10 @@ function clock(){
     }
 }
 
+
 var yn = 1;
 
+// function för att stoppa klockan
 function stopclock(){
     yn--;
     console.log(yn)
@@ -266,8 +269,8 @@ function stopclock(){
     stop.style.gridColumn = "2";
 }
 
+// function för att resetta klockan
 function resetclock(){
-    console.log("test")
     yn = 1;
     console.log(yn)
     sec = document.getElementById('mainclockseconds');
@@ -275,6 +278,7 @@ function resetclock(){
     ant = parseInt(min.innerHTML);
     bnt = parseInt(sec.innerHTML);
 
+    // sekunderna och minuterna sätts till grundvärden
     ant = 4;
     bnt = 0;
 
@@ -289,7 +293,6 @@ function resetclock(){
     var newstart = document.querySelector('#newclockbtn');
     newstart.style.position = "absolute";
     newstart.style.opacity = "0%";
-    console.log("hello world!")
 
     var reset = document.querySelector('#clockresetbtn');
     reset.style.opacity = "0%";
@@ -300,11 +303,12 @@ function resetclock(){
     stop.style.gridColumn = "3"
 }
 
+// function för att starta klockan efter man har stängt av den
 function restart(){
+    // yn blir 1 igen vilket gör att clock funktionen återigen kan börja gå. den funktionen anropas
     yn++;
     console.log(yn);
     clock();
-    console.log("hello world!");
     var reset = document.querySelector('#clockresetbtn');
     reset.style.opacity = "0%";
     reset.style.gridColumn = "2";
@@ -313,8 +317,12 @@ function restart(){
     stop.style.gridColumn = "3"
 }
 
+// en funktion för att intruducera användare som använder konsolen till programmet
 function greet(){
-    console.log("Hello world!")
+    console.log("Hello!");
+    console.log("Welcome to this webbsite. It is a service built to visualize the scores in a judo-match. I hope it works to your satisfaction. It is made with the latest OS ruleset for judo. If you have any questions or suggestions you can reach me, the maker of this service, via my emial samuel@hellqvist.nu")
+    console.log("I hope you enjoy!")
+    console.log("//Samuel")
 }
 
 greet()

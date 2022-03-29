@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Här kan man skriva in vilken match det är, till exempel match 1 eller semifinal -->
     <div id="matchtime"><input type="text" placeholder="Match 1"></div>
     
+    <!-- timern används för att hålla koll på tiden, matchen ändras bara 4 min -->
     <div class="timer">
         <h1 class="clocktext" id="mainclockminute">4</h1>
         <h1 class="clocktext" id="colon">:</h1>
@@ -18,13 +20,16 @@
         <!-- <h2 class="timetype" id="timetypemin">min</h2> -->
         <!-- <h2 class="timetype" id="timetypesec">sec</h2> -->
 
+        <!-- knappen för att stoppa klockan är tänkt att användas när domaren stoppar tiden -->
         <button class="cbtn" id="clockstopbtn" onclick="stopclock()">Stop</button>
         <button class="cbtn" id="clockbtn" onclick="clock()">Start</button>
+        <!-- om man någon gång skulle behöva starta om matchen så finns det en knapp för det -->
         <button class="cbtn" id="clockresetbtn" onclick="resetclock()">Reset</button>
+        <!-- det finns två olika startknappar, eftersom det i javascripten är skillnad på att starta och starta om tiden -->
         <button class="cbtn" id="newclockbtn" onclick="restart()">Restart</button>
     </div>
     
-
+    <!-- här finns det inputs så att man kan skriva in de tävlandes namn och ändra det till vad man vill när en ny match hålls -->
     <div class="contestor" id="whitecontestor">
         <input type="text" placeholder="Contestor 1" id="c1">
     </div>
@@ -42,6 +47,7 @@
         <button class="obtn" id="bobtn" onclick="blueoseakomifnc()">BLUE</button>
     </div>
 
+    <!-- fasthållningarna visas med hjälp av progress-bars. Då ser publiken hur mycket någon tävlande måste hålla i den andre för att få poäng -->
     <div id="osaekomiclock">
         <div class="progress-bar">
             <div class="progress-bar-value"></div>
@@ -50,6 +56,9 @@
         </div>
     </div>
 
+    <!-- poäng och varningar visas med hjälp av siffror
+    det finns knappar för att öka poängen och minska poängen
+    om något poäng fylls i av mistag är det viktigt att man kan ta bort -->
     <div id="white" class="score">
         <button class="ubtn" id="wiubtn" onclick="cntUpIppon('wii')">↑</button>
         <div class="indicator" id="wi">
@@ -101,9 +110,11 @@
 
     </div>
 
+    <!-- en reset knapp kan användas förr att återställa all poäng ställningar till 0 så att
+    man enkelt kan börja nästa match -->
     <button id="reset" onclick="resetter('bwi')">all zero</button>
-    <button class="winbtn" id="whitewinbtn">confirmed winner</button>    
-    <button class="winbtn" id="bluewinbtn">confirmed winner</button>        
+    <!-- <button class="winbtn" id="whitewinbtn">confirmed winner</button>     -->
+    <!-- <button class="winbtn" id="bluewinbtn">confirmed winner</button>         -->
 
     <script src='script.js'></script>
 </body>

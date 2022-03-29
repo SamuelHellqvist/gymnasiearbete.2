@@ -2,14 +2,16 @@
     padding: 0;
     margin: 1px;
     box-sizing: border-box;
+    /* färg variabler sätts för att underlätta att ge olika objekt rätt färg
+    med färgvariabler kan man också andra färg på alla objekt med samma färgvariabel */
     --whiteaccent: white;
     --primarydark: #171820;
     --orangeaccent: #df861d;
     --redaccent: #EB4713;
     --blueaccent: #1236DE;
     --buttongray: #5A5C6E;
-    --greenaccent: #bad455;
 }
+/* i body så används display: grid för att kunna strukturera sidan innehåll på ett smidigt sätt */
 body{
     background-color: var(--primarydark);
     height: 100vh;
@@ -187,6 +189,8 @@ body{
     background-color: var(--blueaccent);
 }
 
+/* shido är varningar i judo. indikatoerna som visar shido får ha röd färg så att de som tittar på matchen
+lätt kan skilja dem från poängen */
 #bs{
     background-color: var(--redaccent);
 }
@@ -267,31 +271,6 @@ input{
     background-color: var(--orangeaccent);
     text-align: center;
     font-weight: bold;
-}
-
-.timer__part--minutes{
-  grid-column: 1;
-  grid-row: 1/3;
-  margin-left: 20px;
-}
-
-.timer__part--seconds{
-  grid-column: 3;
-  grid-row: 1/3;
-  margin-right: 20px;
-}
-
-.timer__btn{
-  grid-row: 4; 
-  background-color: var(--buttongray);
-}
-
-.timer__btn--start{
-  grid-column: 1;
-}
-
-.timer__btn--reset{
-  grid-column: 3;
 }
 
 span{
