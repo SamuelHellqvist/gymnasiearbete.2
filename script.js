@@ -1,4 +1,4 @@
-//uppfunktion till wasaari (den som har flest wasarri (poäng) i slutet av matchen vinner)
+//uppfunktion till wasaari (den som har flest wasaari (poäng) i slutet av matchen vinner)
 function cntUpWasaari(getID){
     temp=document.getElementById(getID);
     console.log(temp);
