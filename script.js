@@ -67,14 +67,15 @@ function cntUpShido(getID){
 //function för att resetta allt
 function resetter(){
     console.log("resetting scores, true");
+    // ställer om alla indikatorer till 0
     document.getElementById('wii').innerHTML="0";
     document.getElementById('bii').innerHTML="0";
     document.getElementById('wwi').innerHTML="0";
     document.getElementById('bwi').innerHTML="0";
     document.getElementById('wsi').innerHTML="0";
     document.getElementById('bsi').innerHTML="0";
+    // ställer klockan till grundtiden
     resetclock();
-    reset_o();
 }
 
 //variabel som sätts till 0 som senare kommer att användas i en funktion som behöver ett växande värde

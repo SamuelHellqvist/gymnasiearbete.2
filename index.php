@@ -31,11 +31,11 @@
     
     <!-- här finns det inputs så att man kan skriva in de tävlandes namn och ändra det till vad man vill när en ny match hålls -->
     <div class="contestor" id="whitecontestor">
-        <input type="text" placeholder="Contestor 1" id="c1">
+        <input type="text" placeholder="Contestant 1" id="c1">
     </div>
 
     <div class="contestor" id="bluecontestor">
-        <input type="text" placeholder="Contestor 2" id="c2">
+        <input type="text" placeholder="Contestant 2" id="c2">
     </div>
 
     <div id="osaekomi">
