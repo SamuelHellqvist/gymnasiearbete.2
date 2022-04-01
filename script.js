@@ -60,7 +60,7 @@ function cntUpShido(getID){
         temp.innerHTML=cnt;
     }
     if (cnt == 3){
-        console.log("Winner chosen")
+        console.log("Winner chosen");
     }
 }
 
@@ -155,8 +155,8 @@ function whiteoseakomifnc(points){
         }, 200);
 
         if (ot == 50){
-            console.log("Somebody got a wasaari")
-            cntUpWasaari('wwi')
+            console.log("Somebody got a wasaari");
+            cntUpWasaari('wwi');
         }
 
         if (ot == 100){
@@ -170,7 +170,7 @@ function whiteoseakomifnc(points){
         progress.style.width = 0 + "%";
         console.log("resetting slider")
         ot = 0;
-        console.log(ot)
+        console.log(ot);
         }
 }
 
@@ -227,7 +227,7 @@ function clock(){
         setTimeout( ()=>{
             bnt--;
             sec.innerHTML=bnt;
-            clock('mainclocksecond')
+            clock('mainclocksecond');
         }, 1000);
 
         if(bnt == 0){
@@ -250,7 +250,7 @@ var yn = 1;
 // function för att stoppa klockan
 function stopclock(){
     yn--;
-    console.log(yn)
+    console.log(yn);
 
     var newstart = document.querySelector('#newclockbtn');
     newstart.style.position = "relative";
@@ -258,12 +258,12 @@ function stopclock(){
     newstart.style.opacity = "100%";
 
     var oldstart = document.querySelector("#clockbtn");
-    oldstart.style.position = "absolute"
+    oldstart.style.position = "absolute";
     oldstart.style.opacity = "0";
 
     var reset = document.querySelector('#clockresetbtn');
     reset.style.opacity = "100%";
-    reset.style.gridColumn = "3"
+    reset.style.gridColumn = "3";
 
     var stop = document.querySelector('#clockstopbtn');
     stop.style.opacity = "0%";
@@ -273,7 +273,7 @@ function stopclock(){
 // function för att resetta klockan
 function resetclock(){
     yn = 1;
-    console.log(yn)
+    console.log(yn);
     sec = document.getElementById('mainclockseconds');
     min = document.getElementById('mainclockminute');
     ant = parseInt(min.innerHTML);
@@ -299,9 +299,9 @@ function resetclock(){
     reset.style.opacity = "0%";
     reset.style.gridColumn = "2";
 
-    var stop = document.querySelector('#clockstopbtn')
+    var stop = document.querySelector('#clockstopbtn');
     stop.style.opacity = "100%";
-    stop.style.gridColumn = "3"
+    stop.style.gridColumn = "3";
 }
 
 // function för att starta klockan efter man har stängt av den
@@ -315,15 +315,15 @@ function restart(){
     reset.style.gridColumn = "2";
     var stop = document.querySelector('#clockstopbtn');
     stop.style.opacity = "100%";
-    stop.style.gridColumn = "3"
+    stop.style.gridColumn = "3";
 }
 
 // en funktion för att intruducera användare som använder konsolen till programmet
 function greet(){
     console.log("Hello!");
-    console.log("Welcome to this webbsite. It is a service built to visualize the scores in a judo-match. I hope it works to your satisfaction. It is made with the latest OS ruleset for judo. If you have any questions or suggestions you can reach me, the maker of this service, via my emial samuel@hellqvist.nu")
-    console.log("I hope you enjoy!")
-    console.log("//Samuel")
+    console.log("Welcome to this webbsite. It is a service built to visualize the scores in a judo-match. I hope it works to your satisfaction. It is made with the latest OS ruleset for judo. If you have any questions or suggestions you can reach me, the maker of this service, via my emial samuel@hellqvist.nu");
+    console.log("I hope you enjoy!");
+    console.log("//Samuel");
 }
 
 greet()
