@@ -75,7 +75,10 @@ function resetter(){
     document.getElementById('wsi').innerHTML="0";
     document.getElementById('bsi').innerHTML="0";
     // ställer klockan till grundtiden
-    resetclock();
+    stopclock();
+    setTimeout( ()=>{
+        resetclock();
+    }, 1000);
 }
 
 //variabel som sätts till 0 som senare kommer att användas i en funktion som behöver ett växande värde
@@ -91,20 +94,23 @@ function stop_o(){
     console.log("cancelling oaseakomi");
     console.log(crash);
 
-    var resetthis = document.querySelector('#robtn');
-    resetthis.style.opacity = "100%";
-    resetthis.style.position = "relative";
-    resetthis.style.gridColumn = "2/4";
+    
+    //var resetthis = document.querySelector('#robtn');
+    //resetthis.style.opacity = "100%";
+    //resetthis.style.position = "relative";
+    //resetthis.style.gridColumn = "2/4";
 
-    var toketa = document.querySelector('#sobtn');
-    toketa.style.position = "absolute";
-    toketa.style.opacity = "0%";
+    //var toketa = document.querySelector('#sobtn');
+    //toketa.style.position = "absolute";
+    //toketa.style.opacity = "0%";
 
     var blue = document.querySelector('#bobtn');
     blue.style.opacity = "0%";
 
     var white = document.querySelector('#wobtn');
     white.style.opacity = "0%";
+
+    reset_o;
 }
 
 //function för att resetta oseakomi funktionerna så att man kan använda dem igen
@@ -135,12 +141,13 @@ function reset_o(){
 
 //function som används när tävlande i vit dräkt håller en fasthållning
 function whiteoseakomifnc(points){ 
-    var progress = document.querySelector("#white-progress-bar");
 
+    console.log("hejsan");
+    var progress = document.querySelector("#white-progress-bar");
     progress.style.opacity = "100%";
 
-    var bluefiller = document.querySelector("#blue-progress-bar");
-    bluefiller.style.opacity = "0%"
+    var bluebtn = document.querySelector("#bobtn");
+    bluebtn.classList.add("disabled");
     
     console.log("starting osaekomi now, white");
     points = ot;
@@ -180,9 +187,6 @@ function blueoseakomifnc(points){
     var progress = document.querySelector("#blue-progress-bar");
 
     progress.style.opacity = "100%";
-
-    var whitefiller = document.querySelector("#white-progress-bar");
-    whitefiller.style.opacity = "0%"
     
     console.log("starting osaekomi now, blue");
     points = ot;
@@ -217,7 +221,9 @@ function blueoseakomifnc(points){
 
 // function för att starta klockan
 function clock(){
+
     if(yn == 1){
+
         sec = document.getElementById('mainclockseconds');
         min = document.getElementById('mainclockminute');
 
@@ -245,34 +251,43 @@ function clock(){
 }
 
 
-var yn = 1;
+var yn = 0;
 
 // function för att stoppa klockan
 function stopclock(){
-    yn--;
+    yn = 0;
+    clock();
     console.log(yn);
 
-    var newstart = document.querySelector('#newclockbtn');
-    newstart.style.position = "relative";
-    newstart.style.gridColumn = "1";
-    newstart.style.opacity = "100%";
+    var start = document.getElementById('clockbtn');
+    start.classList.remove("disabled");
 
-    var oldstart = document.querySelector("#clockbtn");
-    oldstart.style.position = "absolute";
-    oldstart.style.opacity = "0";
+    var reset = document.getElementById("clockresetbtn");
+    reset.classList.remove("disabled");
 
-    var reset = document.querySelector('#clockresetbtn');
-    reset.style.opacity = "100%";
-    reset.style.gridColumn = "3";
+    var stop = document.getElementById("clockstopbtn");
+    stop.classList.add("disabled");
 
-    var stop = document.querySelector('#clockstopbtn');
-    stop.style.opacity = "0%";
-    stop.style.gridColumn = "2";
+
 }
 
+function startclock(){
+    yn = 1;
+    clock();
+
+    var start = document.querySelector("#clockbtn");
+    start.classList.add("disabled");
+
+    var stop = document.querySelector("#clockstopbtn");
+    stop.classList.remove("disabled");
+
+    var reset = document.querySelector("#clockresetbtn");
+    reset.classList.add("disabled");
+}
 // function för att resetta klockan
 function resetclock(){
-    yn = 1;
+    stopclock();
+    buttonsoff();
     console.log(yn);
     sec = document.getElementById('mainclockseconds');
     min = document.getElementById('mainclockminute');
@@ -285,37 +300,6 @@ function resetclock(){
 
     min.innerHTML = ant;
     sec.innerHTML = bnt;
-
-    var oldstart = document.querySelector('#clockbtn');
-    oldstart.style.position = "relative";
-    oldstart.style.gridColumn = "1";
-    oldstart.style.opacity = "100";
-
-    var newstart = document.querySelector('#newclockbtn');
-    newstart.style.position = "absolute";
-    newstart.style.opacity = "0%";
-
-    var reset = document.querySelector('#clockresetbtn');
-    reset.style.opacity = "0%";
-    reset.style.gridColumn = "2";
-
-    var stop = document.querySelector('#clockstopbtn');
-    stop.style.opacity = "100%";
-    stop.style.gridColumn = "3";
-}
-
-// function för att starta klockan efter man har stängt av den
-function restart(){
-    // yn blir 1 igen vilket gör att clock funktionen återigen kan börja gå. den funktionen anropas
-    yn++;
-    console.log(yn);
-    clock();
-    var reset = document.querySelector('#clockresetbtn');
-    reset.style.opacity = "0%";
-    reset.style.gridColumn = "2";
-    var stop = document.querySelector('#clockstopbtn');
-    stop.style.opacity = "100%";
-    stop.style.gridColumn = "3";
 }
 
 // en funktion för att intruducera användare som använder konsolen till programmet
@@ -326,4 +310,14 @@ function greet(){
     console.log("//Samuel");
 }
 
+function buttonsoff(){
+    var stop = document.querySelector("#clockstopbtn");
+    stop.classList.add("disabled");
+
+    var reset = document.querySelector("#clockresetbtn");
+    reset.classList.add("disabled");
+}
+
+
 greet()
+buttonsoff()

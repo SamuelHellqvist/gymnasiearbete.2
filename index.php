@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Här kan man skriva in vilken match det är, till exempel match 1 eller semifinal -->
@@ -22,11 +21,9 @@
 
         <!-- knappen för att stoppa klockan är tänkt att användas när domaren stoppar tiden -->
         <button class="cbtn" id="clockstopbtn" onclick="stopclock()">Stop</button>
-        <button class="cbtn" id="clockbtn" onclick="clock()">Start</button>
+        <button class="cbtn" id="clockbtn" onclick="startclock()">Start</button>
         <!-- om man någon gång skulle behöva starta om matchen så finns det en knapp för det -->
         <button class="cbtn" id="clockresetbtn" onclick="resetclock()">Reset</button>
-        <!-- det finns två olika startknappar, eftersom det i javascripten är skillnad på att starta och starta om tiden -->
-        <button class="cbtn" id="newclockbtn" onclick="restart()">Restart</button>
     </div>
     
     <!-- här finns det inputs så att man kan skriva in de tävlandes namn och ändra det till vad man vill när en ny match hålls -->
@@ -116,6 +113,7 @@
     <!-- <button class="winbtn" id="whitewinbtn">confirmed winner</button>     -->
     <!-- <button class="winbtn" id="bluewinbtn">confirmed winner</button>         -->
 
-    <script src='script.js'></script>
+    <script src='func.js'></script>
+    <link rel="stylesheet" href="toni.css">
 </body>
 </html>

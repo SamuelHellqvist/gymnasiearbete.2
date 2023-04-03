@@ -299,24 +299,23 @@ span{
     font-size: 1rem;
 }
 
-#newclockbtn{
-    position: absolute;
-    opacity: 0;
-}
-
 #timetypesec{
-    grid-column: 3;
-}
-
-#clockresetbtn{
-    opacity: 0%;
-    grid-column: 2;
-}
-
-#clockstopbtn{
     grid-column: 3;
 }
 
 #clockbtn{
     grid-column: 1;
 }
+
+#clockstopbtn{
+    grid-column: 2;
+}
+
+#clockresetbtn{
+    grid-column: 3;
+}
+
+button.disabled { 
+    pointer-events: none; 
+    opacity: 50%;
+  }
