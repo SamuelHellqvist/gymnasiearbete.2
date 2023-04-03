@@ -89,6 +89,11 @@ var ot = 0;
 var crash = 1;
 
 //function för att stoppa osaekomi funktionerna
+
+/*---------------------------------------------------------------
+NOTE! This function needs to be changes since it is not efficient
+----------------------------------------------------------------*/
+
 function stop_o(){
     crash--;
     console.log("cancelling oaseakomi");
@@ -110,10 +115,14 @@ function stop_o(){
     var white = document.querySelector('#wobtn');
     white.style.opacity = "0%";
 
-    reset_o;
+    reset_o();
 }
 
 //function för att resetta oseakomi funktionerna så att man kan använda dem igen
+
+/*---------------------------------------------------------------
+NOTE! This function needs to be changes since it is not efficient
+----------------------------------------------------------------*/
 function reset_o(){
     console.log("crash");
     crash++;
@@ -142,12 +151,9 @@ function reset_o(){
 //function som används när tävlande i vit dräkt håller en fasthållning
 function whiteoseakomifnc(points){ 
 
-    console.log("hejsan");
     var progress = document.querySelector("#white-progress-bar");
     progress.style.opacity = "100%";
 
-    var bluebtn = document.querySelector("#bobtn");
-    bluebtn.classList.add("disabled");
     
     console.log("starting osaekomi now, white");
     points = ot;
